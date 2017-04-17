@@ -1,5 +1,3 @@
-"gvimのみに適用される設定ファイルで、主にGUIの設定を書く
-"vimrc適用後に反映される
 "display & information
 set lines=25
 set columns=90
@@ -9,8 +7,16 @@ set guioptions=c
 "no way to use a mouse
 set mouse=
 set nomousefocus
+set noswapfile
 set mousehide
 
+"colorscheme
+syntax enable
+"set background=light
+"colorscheme molokai
+set background=dark
+"colorscheme solarized
 colorscheme desert
 
-au GUIEnter * simalt ~x	"起動時に最大化
+"最大化で起動
+au GUIEnter * simalt ~x
