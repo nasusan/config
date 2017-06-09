@@ -1,0 +1,4 @@
+" key map
+noremap <C-j> <esc>
+noremap! <C-j> <esc>
+noremap Y y$
