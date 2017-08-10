@@ -3,6 +3,7 @@ set lines=25
 set columns=90
 set cmdheight=1
 set guioptions=c
+set guifont=MS_Gothic:h10
 
 "no way to use a mouse
 set mouse=

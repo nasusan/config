@@ -1,18 +1,39 @@
-[user]
-	name = nasusan
-	email = watanabexy@gmail.com
-[core]
-	autocrlf = true
-	excludesfile = c:\\users\\codegeass\\documents\\gitignore_global.txt
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
 [alias]
-	co = checkout
 	st = status
 	b = branch
-	g = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	co = commit
+	graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+	g = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %C(cyan)%cn %Creset%s' --date=short
+	ch = checkout
+
+
+[diff]
+	tool = WinMerge
+[difftool "WinMerge"]     
+	path = C:/Program Files/WinMerge/WinMergeU.exe     
+	cmd = \"C:/Program Files/WinMerge/WinMergeU.exe\" -f \"*.*\" -e -u -r \"$LOCAL\" \"$REMOTE\" 
+[merge]     
+	tool = WinMerge
+[mergetool "WinMerge"]     
+	path = C:/Program Files/WinMerge/WinMergeU.exe     
+	cmd = \"C:/Program Files/WinMerge/WinMergeU.exe\" -e -u \"$LOCAL\" \"$REMOTE\" \"$MERGED\" 
+[alias]     
+	windiff = difftool -y -d -t WinMerge     
+	winmerge = mergetool -y -t WinMerge 
+
+[difftool]
+	prompt = false
+[difftool "vsdiffmerge"]
+	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\IDE\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+[difftool "vsdiffmerge"]
+	keepbackup = false
 [gui]
-	recentrepo = D:/GitRepos/CheckMyAct
+	recentrepo = C:/GitRepos/d_mobile
+[user]
+	name = kenji-watanabe
+	email = kenji-watanabe@koeitecmo.co.jp
+[difftool "sourcetree"]
+	cmd = 'C:/Program Files/TortoiseSVN/bin/TortoiseMerge.exe' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = 'C:/Program Files/TortoiseSVN/bin/TortoiseMerge.exe'  -base:\"$BASE\" -mine:\"$LOCAL\" -theirs:\"$REMOTE\" -merged:\"$MERGED\"
+	trustExitCode = true
